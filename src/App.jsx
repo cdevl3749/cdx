@@ -7,7 +7,7 @@ function App() {
   const [question, setQuestion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const messagesEndRef = useRef(null);
+  const messagesRef = useRef(null);
 
   const [messages, setMessages] = useState([
     {
@@ -39,10 +39,14 @@ useEffect(() => {
     return;
   }
 
-  messagesEndRef.current?.scrollIntoView({
-    behavior: "smooth",
-    block: "end",
-  });
+  const box = messagesRef.current;
+
+  if (box) {
+    box.scrollTo({
+      top: box.scrollHeight,
+      behavior: "smooth",
+    });
+  }
 }, [messages, isLoading]);
 
   const handleSubmit = async (event) => {
@@ -272,7 +276,7 @@ useEffect(() => {
               </div>
             </div>
 
-            <div className="messages">
+            <div className="messages" ref={messagesRef}>
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -291,8 +295,6 @@ useEffect(() => {
                   CDX réfléchit...
                 </div>
               )}
-
-              <div ref={messagesEndRef} />
             </div>
 
             <form
@@ -310,7 +312,7 @@ useEffect(() => {
                 }
                 aria-label="Votre question"
                 autoComplete="off"
-                disabled={isLoading}
+                readOnly={isLoading}
               />
 
               <button

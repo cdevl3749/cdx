@@ -5,6 +5,8 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 78px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 html,
@@ -18,13 +20,17 @@ body,
 html,
 body {
   overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
+  overscroll-behavior-x: none;
 }
 
 .site {
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
+  overflow-x: clip;
   background: #05080d;
   color: #f4f7fb;
   font-family: Inter, Arial, Helvetica, sans-serif;
@@ -43,7 +49,8 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: auto;
   height: 78px;
   padding: 0 6%;
   display: flex;
@@ -382,7 +389,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .chat-input input:focus {
@@ -740,7 +747,7 @@ a {
     width: 100%;
     min-width: 0;
     padding: 13px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .chat-input button {
