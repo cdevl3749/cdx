@@ -865,3 +865,16 @@ a {
     max-width: 88%;
   }
 }
+
+/* Sécurité champ chat sur petits mobiles */
+@media (max-width: 600px) {
+  .chat-input {
+    padding: 11px 14px 11px 11px;
+  }
+
+  .chat-input button {
+    width: 44px;
+    flex: 0 0 44px;
+    height: 44px;
+  }
+}
