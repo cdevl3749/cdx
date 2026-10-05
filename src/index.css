@@ -1,0 +1,27 @@
+:root {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #f4f7fb;
+  background: #05080d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background: #05080d;
+}
